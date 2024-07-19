@@ -2,6 +2,13 @@
 #include <vector>
 #include <unordered_map>
 
+
+// Helper lambda function to print key-value pairs
+auto print_key_value = [](const auto& key, const auto& value)
+{
+    std::cout << "Key:[" << key << "] Value:[" << value << "]\n";
+};
+
 //O(n)
 std::vector<int> twoSum(const std::vector<int>& nums, int target) {
     // To store the number and its index
