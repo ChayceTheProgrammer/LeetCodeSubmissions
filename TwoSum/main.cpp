@@ -2,8 +2,10 @@
 #include <vector>
 #include <unordered_map>
 
+//O(n)
 std::vector<int> twoSum(const std::vector<int>& nums, int target) {
-    std::unordered_map<int, int> num_map;  // To store the number and its index
+    // To store the number and its index
+    std::unordered_map<int, int> num_map;  
 
     for (int i = 0; i < nums.size(); ++i) {
         int complement = target - nums[i];
@@ -16,13 +18,20 @@ std::vector<int> twoSum(const std::vector<int>& nums, int target) {
     return {};
 }
 
+//O(n^2)
 //Brute Force
 class Solution {
 public:
     std::vector<int> twoSum(std::vector<int>& nums, int target) {
         int n = nums.size();
+
+        //1st element to second to last
         for (int i = 0; i < n - 1; i++) {
+            
+            //2nd element to last (This spans all possible elements)
             for (int j = i + 1; j < n; j++) {
+
+                //checks if elements equal target
                 if (nums[i] + nums[j] == target) {
                     return {i, j};
                 }
