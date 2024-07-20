@@ -13,9 +13,10 @@ auto print_key_value = [](const auto& key, const auto& value)
 std::vector<int> twoSum(const std::vector<int>& nums, int target) {
     // To store the number and its index
     std::unordered_map<int, int> num_map;  
-
+    
     for (int i = 0; i < nums.size(); ++i) {
         int complement = target - nums[i];
+
         if (num_map.find(complement) != num_map.end()) {
             return {num_map[complement], i};
         }
