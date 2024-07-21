@@ -18,6 +18,7 @@ public:
         int x = nums1.size();
         int y = nums2.size();
         
+        //position trackers
         int low = 0;
         int high = x;
         
